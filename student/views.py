@@ -13,16 +13,16 @@ def details(request):
         roll = request.POST.get("roll")
         semester = request.POST.get("semester")
         s = stud(naam=name, roll=int(roll),semester=int(semester))
-       try:
+        try:
 
            s.save()
 
-       except:
+        except:
 
 
            return HttpResponse("roll no.exists")
         
 
-         return HttpResponse("your form has been submitted")
+           return HttpResponse("your form has been submitted")
     else:        
         return render(request,'create.html')
